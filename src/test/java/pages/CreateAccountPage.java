@@ -1,55 +1,65 @@
 package pages;
 
-import com.github.javafaker.Faker;
 import enums.DayOfBirth;
 import enums.MonthOfBirth;
 import enums.State;
 import enums.YearOfBirth;
 import org.openqa.selenium.WebDriver;
 import selectors.WebElementCreateAccountSelectors;
+import utilis.Interactions;
 import utilis.YourAddress;
 import utilis.YourPersonalInformation;
 
-import static utilis.Interactions.*;
+public class CreateAccountPage extends Interactions implements WebElementCreateAccountSelectors {
 
-public class CreateAccountPage extends BasePage implements WebElementCreateAccountSelectors {
     public CreateAccountPage(WebDriver driver) {
         super(driver);
     }
+
+    YourPersonalInformation personalData = new YourPersonalInformation.Builder()
+            .firstName("Jan")
+            .lastName("Kowalski")
+            .password("Password123")
+            .build();
+
     public void inputValidPersonalInformationToCreateAccount() {
-        awaitUntilElementDisplayed(driver, fieldFirstNameSelector);
-        YourPersonalInformation yourPersonalInformation = new YourPersonalInformation("Jan", "Kowalski",
-                "password123");
-        click(driver, buttonManGenderSelector);
-        sendKeys(driver, fieldFirstNameSelector, yourPersonalInformation.getFirstName());
-        sendKeys(driver, fieldLastNameSelector, yourPersonalInformation.getLastName());
-        sendKeys(driver, fieldPasswordSelector, yourPersonalInformation.getPassword());
-        click(driver, buttonDayOfBirthSelector);
-        click(driver, getSelectDayOfBirthFromDropDownSelectors(DayOfBirth.DAY3));
-        click(driver, buttonMonthOfBirthSelector);
-        click(driver, getSelectMonthOfBirthFromDropDownSelectors(MonthOfBirth.AUGUST));
-        click(driver, buttonYearOfBirthSelector);
-        click(driver, getSelectYearOfBirthFromDropDownSelectors(YearOfBirth.BORNIN1993));
+        click(buttonManGenderSelector);
+        sendKeys(fieldFirstNameSelector, personalData.getFirstName());
+        sendKeys(fieldLastNameSelector, personalData.getLastName());
+        sendKeys(fieldPasswordSelector, personalData.getPassword());
+        click(buttonDayOfBirthSelector);
+        click(getSelectDayOfBirthFromDropDownSelectors(DayOfBirth.DAY3));
+        click(buttonMonthOfBirthSelector);
+        click(getSelectMonthOfBirthFromDropDownSelectors(MonthOfBirth.AUGUST));
+        click(buttonYearOfBirthSelector);
+        click(getSelectYearOfBirthFromDropDownSelectors(YearOfBirth.BORNIN1993));
     }
+
+    YourAddress address = new YourAddress.Builder()
+            .company("SWMind")
+            .addressStreet("Polna Street")
+            .addressBuilding("167/6")
+            .city("Michigan")
+            .postalCode("23213")
+            .additionalInformation("Something")
+            .mobilePhone("223423413")
+            .referenceAddress("Wiejska Street")
+            .build();
+
     public void inputValidAddressInformationToCreateAccount() {
-        awaitUntilElementDisplayed(driver, fieldAddressCompanySelector);
-        Faker faker = new Faker();
-        YourAddress yourAddress = new YourAddress(faker.company().name(), faker.address().streetName(),faker.address().buildingNumber(),
-                faker.address().city(), faker.address().zipCode(),"Something", faker.phoneNumber().phoneNumber(),faker.address().streetName());
-        sendKeys(driver, fieldAddressCompanySelector, yourAddress.getCompany());
-        sendKeys(driver, fieldAddressStreetSelector, yourAddress.getAddressStreet());
-        sendKeys(driver, fieldAddressBuildingSelector, yourAddress.getAddressBuilding());
-        sendKeys(driver, fieldCitySelector, yourAddress.getCity());
-        click(driver, buttonAddressStateSelector);
-        click(driver,getSelectStateOfUsaFromDropDownSelectors(State.FLORIDA));
-        sendKeys(driver,fieldPostalCodeSelector, yourAddress.getPostalCode());
-        sendKeys(driver, fieldAdditionalInformationSelector, yourAddress.getAdditionalInformation());
-        sendKeys(driver, fieldMobilePhoneSelector, yourAddress.getMobilePhone());
-        clear(driver, fieldAddressForFutureReferenceSelector);
-        sendKeys(driver, fieldAddressForFutureReferenceSelector, yourAddress.getReferenceAddress());
+        sendKeys(fieldAddressCompanySelector, address.getCompany());
+        sendKeys(fieldAddressStreetSelector, address.getAddressStreet());
+        sendKeys(fieldAddressBuildingSelector, address.getAddressBuilding());
+        sendKeys(fieldCitySelector, address.getCity());
+        click(buttonAddressStateSelector);
+        click(getSelectStateOfUsaFromDropDownSelectors(State.FLORIDA));
+        sendKeys(fieldPostalCodeSelector, address.getPostalCode());
+        sendKeys(fieldAdditionalInformationSelector, address.getAdditionalInformation());
+        sendKeys(fieldMobilePhoneSelector, address.getMobilePhone());
+        clear(fieldAddressForFutureReferenceSelector);
+        sendKeys(fieldAddressForFutureReferenceSelector, address.getReferenceAddress());
     }
     public void clickOnRegisterButton() {
-        awaitUntilElementDisplayed(driver, buttonRegisterSelector);
-        click(driver, buttonRegisterSelector);
+        click(buttonRegisterSelector);
     }
 }

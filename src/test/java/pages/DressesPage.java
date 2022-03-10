@@ -3,52 +3,42 @@ package pages;
 import com.github.javafaker.Faker;
 import org.openqa.selenium.WebDriver;
 import selectors.WebElementSelectors;
+import utilis.Interactions;
 
-import static utilis.Interactions.*;
-
-public class DressesPage extends BasePage implements WebElementSelectors {
+public class DressesPage extends Interactions implements WebElementSelectors {
     public DressesPage(WebDriver driver) {
         super(driver);
     }
     public void inputValueOfDressesInSearchBox() {
-        awaitUntilElementDisplayed(driver, theMainSearchBoxSelector);
-        sendKeys(driver, theMainSearchBoxSelector, "dresses");
+        sendKeys(theMainSearchBoxSelector, "dresses");
     }
     public void clickInSearchButton() {
-        awaitUntilElementDisplayed(driver, buttonSearchSelector);
-        click(driver, buttonSearchSelector);
+        click(buttonSearchSelector);
     }
     public void clickOnButtonSortProductsBy() {
-        awaitUntilElementDisplayed(driver, buttonSelectProductBySelector);
-        click(driver, buttonSelectProductBySelector);
+        click(buttonSelectProductBySelector);
     }
     public void clickOnPriceLowestFirstFromDropDownSortProductsBy() {
-        awaitUntilElementDisplayed(driver, fieldPriceLowestFirstFromDropDownSelectProductSelector);
-        click(driver, fieldPriceLowestFirstFromDropDownSelectProductSelector);
+        click(fieldPriceLowestFirstFromDropDownSelectProductSelector);
     }
     public void hoverOverOnTheDressAndClickOnAddToCartFromDropdown() {
-        awaitUntilElementDisplayed(driver, imageOfDressFromList);
-        hoverOverAndClickOnDropDownElement(driver,imageOfDressFromList, buttonAddToCartSelectedDress);
+        hoverOverAndClickOnDropDownElement(imageOfDressFromList, buttonAddToCartSelectedDress);
     }
     public void clickOnButtonContinueShopping() {
-        awaitUntilElementDisplayed(driver, buttonContinueShopping);
-        click(driver, buttonContinueShopping);
+        click(buttonContinueShopping);
     }
     public void hoverOverOnMyShoppingCartAndClickCheckOutFromDropDown() {
-        awaitUntilElementDisplayed(driver, buttonViewMyShoppingCart);
-        hoverOverAndClickOnDropDownElement(driver, buttonViewMyShoppingCart, buttonCheckOutFromViewMyShoppingCartDropDownSelector);
+        refreshPage();
+        hoverOverAndClickOnDropDownElement(buttonViewMyShoppingCart, buttonCheckOutFromViewMyShoppingCartDropDownSelector);
     }
     public void clickOnProceedToCheckoutButton() {
-        awaitUntilElementDisplayed(driver, buttonProceedToCheckout);
-        click(driver, buttonProceedToCheckout);
+        click(buttonProceedToCheckout);
     }
     public void inputEmailAddress() {
-        awaitUntilElementDisplayed(driver, fieldEmailAddressSelector);
         Faker faker = new Faker();
-        sendKeys(driver, fieldEmailAddressSelector, faker.internet().emailAddress());
+        sendKeys(fieldEmailAddressSelector, faker.internet().emailAddress());
     }
     public void clickOnButtonCreateAnAccount() {
-        awaitUntilElementDisplayed(driver, buttonCreateAnAccount);
-        click(driver, buttonCreateAnAccount);
+        click(buttonCreateAnAccount);
     }
 }

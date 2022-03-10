@@ -1,8 +1,8 @@
 package utilis;
 
-import com.github.javafaker.Faker;
 import org.awaitility.Awaitility;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -10,35 +10,34 @@ import org.openqa.selenium.interactions.Actions;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
-public class Interactions {
+public class Interactions extends BaseInteractions {
 
-    private final static int TIMEOUT = 5;
+    private final int TIMEOUT = 5;
 
-    public static void awaitUntilElementDisplayed(WebDriver driver, By selector) {
+    public Interactions(WebDriver driver) {
+        super(driver);
+    }
+    public void awaitUntilElementDisplayed(By selector) {
         Awaitility.await().atMost(TIMEOUT, TimeUnit.SECONDS).ignoreExceptions().until(() -> driver.findElement(selector).isDisplayed());
     }
-
-    public static void click(WebDriver driver, By selector) {
-        awaitUntilElementDisplayed(driver, selector);
+    public void click(By selector) {
+        awaitUntilElementDisplayed(selector);
         driver.findElement(selector).click();
     }
-
-    public static void sendKeys(WebDriver driver, By selector, String keys) {
-        awaitUntilElementDisplayed(driver, selector);
+    public void sendKeys(By selector, String keys) {
+        awaitUntilElementDisplayed(selector);
         driver.findElement(selector).click();
         driver.findElement(selector).sendKeys(keys);
     }
-
-    public static void clear(WebDriver driver, By selector) {
-        awaitUntilElementDisplayed(driver, selector);
+    public void clear(By selector) {
+        awaitUntilElementDisplayed(selector);
         driver.findElement(selector).clear();
     }
-    public static void clearByKeys(WebDriver driver,By selector){
-        awaitUntilElementDisplayed(driver, selector);
+    public void clearByKeys(By selector){
+        awaitUntilElementDisplayed(selector);
         driver.findElement(selector).sendKeys(Keys.CONTROL , "a" ,Keys.DELETE);
     }
-
-    public static boolean isElementDisplayed(WebDriver driver, By selector) {
+    public boolean isElementDisplayed(By selector) {
         boolean elementPresent = false;
         try {
             if (driver.findElement(selector).isDisplayed()) {
@@ -49,11 +48,29 @@ public class Interactions {
         }
         return elementPresent;
     }
-    public static void hoverOverAndClickOnDropDownElement(WebDriver driver, By fieldToExpandSelector, By elementFromDropDownSelector) {
-        awaitUntilElementDisplayed(driver, fieldToExpandSelector);
+    public void hoverOverAndClickOnDropDownElement(By fieldToExpandSelector, By elementFromDropDownSelector) {
+        awaitUntilElementDisplayed(fieldToExpandSelector);
         Actions actions = new Actions(driver);
         actions.moveToElement(driver.findElement(fieldToExpandSelector)).perform();
-        awaitUntilElementDisplayed(driver, elementFromDropDownSelector);
+        awaitUntilElementDisplayed(elementFromDropDownSelector);
         driver.findElement(elementFromDropDownSelector).click();
     }
+    public void refreshPage() {
+        JavascriptExecutor method = ((JavascriptExecutor) driver);
+        method.executeScript("document.location.reload()");
+    }
+    public void scrollDownPage() {
+        JavascriptExecutor scroll = ((JavascriptExecutor)driver);
+        scroll.executeScript("window.scrollBy(0, 250)");
+    }
+    public void scrollUpPage() {
+        JavascriptExecutor scroll = ((JavascriptExecutor)driver);
+        scroll.executeScript("window.scrollBy(0, -250)");
+    }
+    public void scrollToBottomOfPage() {
+        JavascriptExecutor scroll = ((JavascriptExecutor)driver);
+        scroll.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+    }
+
 }
+
