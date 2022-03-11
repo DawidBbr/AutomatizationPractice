@@ -17,8 +17,25 @@ public class HomePageTest extends BaseTest{
         buyingDressesPage.inputEmailAddress();
         buyingDressesPage.clickOnButtonCreateAnAccount();
         createAccountPage.inputPersonalInformationToCreateAccount();
-        createAccountPage.inputValidAddressInformationToCreateAccount();
+        createAccountPage.inputAddressInformationToCreateAccount();
         createAccountPage.clickOnRegisterButton();
+    }
+    @Test
+    public void shouldReturn() {
+        buyingShirtPage.clickOnWomenCategoryButtonInHomepage();
+        buyingShirtPage.clickOnTopsCategoryOfProductsButton();
+        buyingShirtPage.clickOnMediumSizeOfProductsButton();
+        buyingShirtPage.clickOnOrangeColorOfProductsButton();
+        buyingShirtPage.hoverOverOnTheShirtAndClickOnAddToCartFromDropdown();
+        buyingDressesPage.clickOnButtonContinueShopping();
+        buyingDressesPage.hoverOverOnMyShoppingCartAndClickCheckOutFromDropDown();
+        buyingDressesPage.clickOnProceedToCheckoutButton();
+        buyingDressesPage.inputEmailAddress();
+        buyingDressesPage.clickOnButtonCreateAnAccount();
+        createAccountPage.inputPersonalInformationWithEmptyPassword();
+        createAccountPage.inputAddressInformationWithTooLongMobilePhone();
+        createAccountPage.clickOnRegisterButton();
+        buyingShirtPage.checkIfRedBoxAlertIsDisplayed();
     }
 
 }

@@ -24,6 +24,15 @@ public class PersonalInformation {
         return password;
     }
 
+    @Override
+    public String toString() {
+        return "PersonalInformation{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", password='" + password + '\'' +
+                '}';
+    }
+
     public static class PersonalInformationBuilder {
         protected String firstName;
         protected String lastName;

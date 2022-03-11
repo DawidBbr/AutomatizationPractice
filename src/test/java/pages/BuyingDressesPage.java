@@ -1,44 +1,45 @@
 package pages;
 
 import com.github.javafaker.Faker;
-import org.openqa.selenium.WebDriver;
 import selectors.WebElementSelectors;
 import utilis.Interactions;
 
-public class BuyingDressesPage extends Interactions implements WebElementSelectors {
-    public BuyingDressesPage(WebDriver driver) {
-        super(driver);
+public class BuyingDressesPage extends BasePage implements WebElementSelectors {
+
+    public BuyingDressesPage(Interactions interactions) {
+        super(interactions);
     }
+
     public void inputValueOfDressesInSearchBox() {
-        sendKeys(theMainSearchBoxSelector, "dresses");
+        interactions.sendKeys(theMainSearchBoxSelector, "dresses");
     }
     public void clickInSearchButton() {
-        click(buttonSearchSelector);
+        interactions.click(buttonSearchSelector);
     }
     public void clickOnButtonSortProductsBy() {
-        click(buttonSelectProductBySelector);
+        interactions.click(buttonSelectProductBySelector);
     }
     public void clickOnPriceLowestFirstFromDropDownSortProductsBy() {
-        click(fieldPriceLowestFirstFromDropDownSelectProductSelector);
+        interactions.click(fieldPriceLowestFirstFromDropDownSelectProductSelector);
     }
     public void hoverOverOnTheDressAndClickOnAddToCartFromDropdown() {
-        hoverOverAndClickOnDropDownElement(imageOfDressFromList, buttonAddToCartSelectedDress);
+        interactions.hoverOverAndClickOnDropDownElement(imageOfDressFromListSelector, buttonAddToCartSelectedDressSelector);
     }
     public void clickOnButtonContinueShopping() {
-        click(buttonContinueShopping);
+        interactions.click(buttonContinueShoppingSelector);
     }
     public void hoverOverOnMyShoppingCartAndClickCheckOutFromDropDown() {
-        refreshPage();
-        hoverOverAndClickOnDropDownElement(buttonViewMyShoppingCart, buttonCheckOutFromViewMyShoppingCartDropDownSelector);
+        interactions.refreshPage();
+        interactions.hoverOverAndClickOnDropDownElement(buttonViewMyShoppingCartSelector, buttonCheckOutFromViewMyShoppingCartDropDownSelector);
     }
     public void clickOnProceedToCheckoutButton() {
-        click(buttonProceedToCheckout);
+        interactions.click(buttonProceedToCheckoutSelector);
     }
     public void inputEmailAddress() {
         Faker faker = new Faker();
-        sendKeys(fieldEmailAddressSelector, faker.internet().emailAddress());
+        interactions.sendKeys(fieldEmailAddressSelector, faker.internet().emailAddress());
     }
     public void clickOnButtonCreateAnAccount() {
-        click(buttonCreateAnAccount);
+        interactions.click(buttonCreateAnAccountSelector);
     }
 }

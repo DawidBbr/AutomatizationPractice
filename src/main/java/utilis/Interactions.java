@@ -32,6 +32,7 @@ public class Interactions {
         driver.findElement(selector).click();
         driver.findElement(selector).sendKeys(keys);
     }
+
     public void clear(By selector) {
         awaitUntilElementDisplayed(selector);
         driver.findElement(selector).clear();
@@ -64,11 +65,11 @@ public class Interactions {
     }
     public void scrollDownPage() {
         JavascriptExecutor scroll = ((JavascriptExecutor)driver);
-        scroll.executeScript("window.scrollBy(0, 250)");
+        scroll.executeScript("window.scrollBy(0, 500)");
     }
     public void scrollUpPage() {
         JavascriptExecutor scroll = ((JavascriptExecutor)driver);
-        scroll.executeScript("window.scrollBy(0, -250)");
+        scroll.executeScript("window.scrollBy(0, -500)");
     }
     public void scrollToBottomOfPage() {
         JavascriptExecutor scroll = ((JavascriptExecutor)driver);

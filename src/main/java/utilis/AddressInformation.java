@@ -1,6 +1,6 @@
 package utilis;
 
-public class AddresInformation {
+public class AddressInformation {
 
     protected final String company;
     protected final String addressStreet;
@@ -11,7 +11,7 @@ public class AddresInformation {
     protected final String mobilePhone;
     protected final String referenceAddress;
 
-    private AddresInformation(AddressInformationBuilder builder) {
+    private AddressInformation(AddressInformationBuilder builder) {
         this.company = builder.company;
         this.addressStreet = builder.addressStreet;
         this.addressBuilding = builder.addressBuilding;
@@ -52,6 +52,20 @@ public class AddresInformation {
 
     public String getReferenceAddress() {
         return referenceAddress;
+    }
+
+    @Override
+    public String toString() {
+        return "AddresInformation{" +
+                "company='" + company + '\'' +
+                ", addressStreet='" + addressStreet + '\'' +
+                ", addressBuilding='" + addressBuilding + '\'' +
+                ", city='" + city + '\'' +
+                ", postalCode='" + postalCode + '\'' +
+                ", additionalInformation='" + additionalInformation + '\'' +
+                ", mobilePhone='" + mobilePhone + '\'' +
+                ", referenceAddress='" + referenceAddress + '\'' +
+                '}';
     }
 
     public static class AddressInformationBuilder {
@@ -96,8 +110,8 @@ public class AddresInformation {
             this.referenceAddress = referenceAddress;
             return this;
         }
-        public AddresInformation build() {
-            return new AddresInformation(this);
+        public AddressInformation build() {
+            return new AddressInformation(this);
         }
     }
 }
