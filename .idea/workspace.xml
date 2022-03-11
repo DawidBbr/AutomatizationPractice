@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b9160ca4-1f33-4bb8-9c3a-10a8009ed0ee" name="Changes" comment="New test">
-      <change afterPath="$PROJECT_DIR$/src/test/java/pages/BuyingShirtPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/selectors/WebElementShirtSelectors.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utilis/AddresInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utilis/AddressInformation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utilis/Interactions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utilis/Interactions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utilis/PersonalInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utilis/PersonalInformation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/BuyingDressesPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/BuyingDressesPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/CreateAccountPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/CreateAccountPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/selectors/WebElementSelectors.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/selectors/WebElementSelectors.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/HomePageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/HomePageTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="b9160ca4-1f33-4bb8-9c3a-10a8009ed0ee" name="Changes" comment="New test" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -78,7 +66,7 @@
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
   </component>
-  <component name="RunManager" selected="JUnit.HomePageTest.shouldReturn">
+  <component name="RunManager" selected="JUnit.HomePageTest">
     <configuration name="HomePageTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JavaProject" />
       <extension name="coverage">
@@ -128,8 +116,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.HomePageTest.shouldReturn" />
         <item itemvalue="JUnit.HomePageTest" />
+        <item itemvalue="JUnit.HomePageTest.shouldReturn" />
         <item itemvalue="JUnit.HomePageTest.shouldReturnSuccessOfBuyProduct" />
       </list>
     </recent_temporary>
@@ -178,7 +166,14 @@
       <option name="project" value="LOCAL" />
       <updated>1646987576174</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="New test">
+      <created>1646995545852</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1646995545852</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
