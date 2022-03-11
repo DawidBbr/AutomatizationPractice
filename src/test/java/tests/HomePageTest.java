@@ -21,7 +21,7 @@ public class HomePageTest extends BaseTest{
         createAccountPage.clickOnRegisterButton();
     }
     @Test
-    public void shouldReturnInvalidPasswordAlert() {
+    public void shouldReturnInvalidPasswordAlertAfterTryingToCreateAccount() {
         buyingShirtPage.clickOnWomenCategoryButtonInHomepage();
         buyingShirtPage.clickOnTopsCategoryOfProductsButton();
         buyingShirtPage.clickOnMediumSizeOfProductsButton();
