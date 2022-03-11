@@ -5,8 +5,8 @@ import org.openqa.selenium.WebDriver;
 import selectors.WebElementSelectors;
 import utilis.Interactions;
 
-public class DressesPage extends Interactions implements WebElementSelectors {
-    public DressesPage(WebDriver driver) {
+public class BuyingDressesPage extends Interactions implements WebElementSelectors {
+    public BuyingDressesPage(WebDriver driver) {
         super(driver);
     }
     public void inputValueOfDressesInSearchBox() {

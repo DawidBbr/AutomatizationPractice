@@ -4,62 +4,81 @@ import enums.DayOfBirth;
 import enums.MonthOfBirth;
 import enums.State;
 import enums.YearOfBirth;
-import org.openqa.selenium.WebDriver;
 import selectors.WebElementCreateAccountSelectors;
 import utilis.Interactions;
-import utilis.YourAddress;
-import utilis.YourPersonalInformation;
+import utilis.AddresInformation;
+import utilis.PersonalInformation;
 
-public class CreateAccountPage extends Interactions implements WebElementCreateAccountSelectors {
+public class CreateAccountPage extends BasePage implements WebElementCreateAccountSelectors {
 
-    public CreateAccountPage(WebDriver driver) {
-        super(driver);
+    public CreateAccountPage(Interactions interactions) {
+        super(interactions);
     }
 
-    YourPersonalInformation personalData = new YourPersonalInformation.Builder()
-            .firstName("Jan")
-            .lastName("Kowalski")
-            .password("Password123")
-            .build();
-
-    public void inputValidPersonalInformationToCreateAccount() {
-        click(buttonManGenderSelector);
-        sendKeys(fieldFirstNameSelector, personalData.getFirstName());
-        sendKeys(fieldLastNameSelector, personalData.getLastName());
-        sendKeys(fieldPasswordSelector, personalData.getPassword());
-        click(buttonDayOfBirthSelector);
-        click(getSelectDayOfBirthFromDropDownSelectors(DayOfBirth.DAY3));
-        click(buttonMonthOfBirthSelector);
-        click(getSelectMonthOfBirthFromDropDownSelectors(MonthOfBirth.AUGUST));
-        click(buttonYearOfBirthSelector);
-        click(getSelectYearOfBirthFromDropDownSelectors(YearOfBirth.BORNIN1993));
+    public PersonalInformation.PersonalInformationBuilder getBasePersonalInformationBuilder() {
+        PersonalInformation.PersonalInformationBuilder personalData = new PersonalInformation.PersonalInformationBuilder()
+                .firstName("Jan")
+                .lastName("Kowalski")
+                .password("Password123");
+        return personalData;
     }
 
-    YourAddress address = new YourAddress.Builder()
-            .company("SWMind")
-            .addressStreet("Polna Street")
-            .addressBuilding("167/6")
-            .city("Michigan")
-            .postalCode("23213")
-            .additionalInformation("Something")
-            .mobilePhone("223423413")
-            .referenceAddress("Wiejska Street")
-            .build();
+    public void inputPersonalInformationToCreateAccount() {
+        PersonalInformation personalInformation = getBasePersonalInformationBuilder().build();
+        interactions.click(buttonManGenderSelector);
+        interactions.sendKeys(fieldFirstNameSelector, personalInformation.getFirstName());
+        interactions.sendKeys(fieldLastNameSelector, personalInformation.getLastName());
+        interactions.sendKeys(fieldPasswordSelector, personalInformation.getPassword());
+        interactions.click(buttonDayOfBirthSelector);
+        interactions.click(getSelectDayOfBirthFromDropDownSelectors(DayOfBirth.DAY3));
+        interactions.click(buttonMonthOfBirthSelector);
+        interactions.click(getSelectMonthOfBirthFromDropDownSelectors(MonthOfBirth.AUGUST));
+        interactions.click(buttonYearOfBirthSelector);
+        interactions.click(getSelectYearOfBirthFromDropDownSelectors(YearOfBirth.BORNIN1993));
+    }
+
+    public void inputPersonalInformationWithEmptyPassword() {
+        PersonalInformation personalInformation = getBasePersonalInformationBuilder().password("").build();
+        interactions.click(buttonManGenderSelector);
+        interactions.sendKeys(fieldFirstNameSelector, personalInformation.getFirstName());
+        interactions.sendKeys(fieldLastNameSelector, personalInformation.getLastName());
+        interactions.sendKeys(fieldPasswordSelector, personalInformation.getPassword());
+        interactions.click(buttonDayOfBirthSelector);
+        interactions.click(getSelectDayOfBirthFromDropDownSelectors(DayOfBirth.DAY3));
+        interactions.click(buttonMonthOfBirthSelector);
+        interactions.click(getSelectMonthOfBirthFromDropDownSelectors(MonthOfBirth.AUGUST));
+        interactions.click(buttonYearOfBirthSelector);
+        interactions.click(getSelectYearOfBirthFromDropDownSelectors(YearOfBirth.BORNIN1993));
+    }
+
+    public AddresInformation.AddressInformationBuilder getBaseAddressInformationBuilder() {
+        AddresInformation.AddressInformationBuilder addressData = new AddresInformation.AddressInformationBuilder()
+                .company("SWMind")
+                .addressStreet("Polna Street")
+                .addressBuilding("167/6")
+                .city("Michigan")
+                .postalCode("23213")
+                .additionalInformation("Something")
+                .mobilePhone("223423413")
+                .referenceAddress("Wiejska Street");
+                return addressData;
+    }
 
     public void inputValidAddressInformationToCreateAccount() {
-        sendKeys(fieldAddressCompanySelector, address.getCompany());
-        sendKeys(fieldAddressStreetSelector, address.getAddressStreet());
-        sendKeys(fieldAddressBuildingSelector, address.getAddressBuilding());
-        sendKeys(fieldCitySelector, address.getCity());
-        click(buttonAddressStateSelector);
-        click(getSelectStateOfUsaFromDropDownSelectors(State.FLORIDA));
-        sendKeys(fieldPostalCodeSelector, address.getPostalCode());
-        sendKeys(fieldAdditionalInformationSelector, address.getAdditionalInformation());
-        sendKeys(fieldMobilePhoneSelector, address.getMobilePhone());
-        clear(fieldAddressForFutureReferenceSelector);
-        sendKeys(fieldAddressForFutureReferenceSelector, address.getReferenceAddress());
+        AddresInformation addressInformation = getBaseAddressInformationBuilder().build();
+        interactions.sendKeys(fieldAddressCompanySelector, addressInformation.getCompany());
+        interactions.sendKeys(fieldAddressStreetSelector, addressInformation.getAddressStreet());
+        interactions.sendKeys(fieldAddressBuildingSelector, addressInformation.getAddressBuilding());
+        interactions.sendKeys(fieldCitySelector, addressInformation.getCity());
+        interactions.click(buttonAddressStateSelector);
+        interactions.click(getSelectStateOfUsaFromDropDownSelectors(State.FLORIDA));
+        interactions.sendKeys(fieldPostalCodeSelector, addressInformation.getPostalCode());
+        interactions.sendKeys(fieldAdditionalInformationSelector, addressInformation.getAdditionalInformation());
+        interactions.sendKeys(fieldMobilePhoneSelector, addressInformation.getMobilePhone());
+        interactions.clear(fieldAddressForFutureReferenceSelector);
+        interactions.sendKeys(fieldAddressForFutureReferenceSelector, addressInformation.getReferenceAddress());
     }
     public void clickOnRegisterButton() {
-        click(buttonRegisterSelector);
+        interactions.click(buttonRegisterSelector);
     }
 }

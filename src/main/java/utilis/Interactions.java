@@ -10,12 +10,15 @@ import org.openqa.selenium.interactions.Actions;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
-public class Interactions extends BaseInteractions {
+public class Interactions {
 
     private final int TIMEOUT = 5;
+    private WebDriver driver;
+
 
     public Interactions(WebDriver driver) {
-        super(driver);
+
+        this.driver = driver;
     }
     public void awaitUntilElementDisplayed(By selector) {
         Awaitility.await().atMost(TIMEOUT, TimeUnit.SECONDS).ignoreExceptions().until(() -> driver.findElement(selector).isDisplayed());

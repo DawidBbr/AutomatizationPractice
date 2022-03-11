@@ -6,19 +6,19 @@ public class HomePageTest extends BaseTest{
 
     @Test
     public void shouldReturnSuccessOfBuyProduct() {
-        dressesPage.inputValueOfDressesInSearchBox();
-        dressesPage.clickInSearchButton();
-        dressesPage.clickOnButtonSortProductsBy();
-        dressesPage.clickOnPriceLowestFirstFromDropDownSortProductsBy();
-        dressesPage.hoverOverOnTheDressAndClickOnAddToCartFromDropdown();
-        dressesPage.clickOnButtonContinueShopping();
-        dressesPage.hoverOverOnMyShoppingCartAndClickCheckOutFromDropDown();
-        dressesPage.clickOnProceedToCheckoutButton();
-        dressesPage.inputEmailAddress();
-        dressesPage.clickOnButtonCreateAnAccount();
-        createAccountPage.inputValidPersonalInformationToCreateAccount();
+        buyingDressesPage.inputValueOfDressesInSearchBox();
+        buyingDressesPage.clickInSearchButton();
+        buyingDressesPage.clickOnButtonSortProductsBy();
+        buyingDressesPage.clickOnPriceLowestFirstFromDropDownSortProductsBy();
+        buyingDressesPage.hoverOverOnTheDressAndClickOnAddToCartFromDropdown();
+        buyingDressesPage.clickOnButtonContinueShopping();
+        buyingDressesPage.hoverOverOnMyShoppingCartAndClickCheckOutFromDropDown();
+        buyingDressesPage.clickOnProceedToCheckoutButton();
+        buyingDressesPage.inputEmailAddress();
+        buyingDressesPage.clickOnButtonCreateAnAccount();
+        createAccountPage.inputPersonalInformationToCreateAccount();
         createAccountPage.inputValidAddressInformationToCreateAccount();
         createAccountPage.clickOnRegisterButton();
-
     }
+
 }

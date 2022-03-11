@@ -1,6 +1,6 @@
 package utilis;
 
-public class YourAddress {
+public class AddresInformation {
 
     protected final String company;
     protected final String addressStreet;
@@ -11,7 +11,7 @@ public class YourAddress {
     protected final String mobilePhone;
     protected final String referenceAddress;
 
-    private YourAddress(Builder builder) {
+    private AddresInformation(AddressInformationBuilder builder) {
         this.company = builder.company;
         this.addressStreet = builder.addressStreet;
         this.addressBuilding = builder.addressBuilding;
@@ -54,7 +54,7 @@ public class YourAddress {
         return referenceAddress;
     }
 
-    public static class Builder {
+    public static class AddressInformationBuilder {
         protected String company;
         protected String addressStreet;
         protected String addressBuilding;
@@ -64,40 +64,40 @@ public class YourAddress {
         protected String mobilePhone;
         protected String referenceAddress;
 
-        public Builder company(final String company) {
+        public AddressInformationBuilder company(final String company) {
             this.company = company;
             return this;
         }
-        public Builder addressStreet(final String addressStreet) {
+        public AddressInformationBuilder addressStreet(final String addressStreet) {
             this.addressStreet = addressStreet;
             return this;
         }
-        public Builder addressBuilding(final String addressBuilding) {
+        public AddressInformationBuilder addressBuilding(final String addressBuilding) {
             this.addressBuilding = addressBuilding;
             return this;
         }
-        public Builder city(final String city) {
+        public AddressInformationBuilder city(final String city) {
             this.city = city;
             return this;
         }
-        public Builder postalCode(final String postalCode) {
+        public AddressInformationBuilder postalCode(final String postalCode) {
             this.postalCode = postalCode;
             return this;
         }
-        public Builder additionalInformation(final String additionalInformation) {
+        public AddressInformationBuilder additionalInformation(final String additionalInformation) {
             this.additionalInformation = additionalInformation;
             return this;
         }
-        public Builder mobilePhone(final String mobilePhone) {
+        public AddressInformationBuilder mobilePhone(final String mobilePhone) {
             this.mobilePhone = mobilePhone;
             return this;
         }
-        public Builder referenceAddress(final String referenceAddress) {
+        public AddressInformationBuilder referenceAddress(final String referenceAddress) {
             this.referenceAddress = referenceAddress;
             return this;
         }
-        public YourAddress build() {
-            return new YourAddress(this);
+        public AddresInformation build() {
+            return new AddresInformation(this);
         }
     }
 }

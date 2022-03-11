@@ -1,12 +1,12 @@
 package utilis;
 
-public class YourPersonalInformation {
+public class PersonalInformation {
 
     protected final String firstName;
     protected final String lastName;
     protected final String password;
 
-    private YourPersonalInformation(Builder builder) {
+    private PersonalInformation(PersonalInformationBuilder builder) {
         this.firstName = builder.firstName;
         this.lastName = builder.lastName;
         this.password = builder.password;
@@ -24,27 +24,28 @@ public class YourPersonalInformation {
         return password;
     }
 
-    public static class Builder {
+    public static class PersonalInformationBuilder {
         protected String firstName;
         protected String lastName;
         protected String password;
 
-        public Builder firstName(final String firstName) {
+        public PersonalInformationBuilder firstName(final String firstName) {
             this.firstName = firstName;
             return this;
         }
 
-        public Builder lastName(final String lastName) {
+        public PersonalInformationBuilder lastName(final String lastName) {
             this.lastName = lastName;
             return this;
         }
 
-        public Builder password(final String password) {
+        public PersonalInformationBuilder password(final String password) {
             this.password = password;
             return this;
         }
-        public YourPersonalInformation build() {
-            return new YourPersonalInformation(this);
+        public PersonalInformation build() {
+            return new PersonalInformation(this);
         }
     }
+
 }

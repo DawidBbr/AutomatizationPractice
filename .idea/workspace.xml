@@ -4,13 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b9160ca4-1f33-4bb8-9c3a-10a8009ed0ee" name="Changes" comment="JSExecutor and Builder trainings">
+    <list default="true" id="b9160ca4-1f33-4bb8-9c3a-10a8009ed0ee" name="Changes" comment="New test">
+      <change afterPath="$PROJECT_DIR$/src/test/java/pages/BasePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utilis/BaseInteractions.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utilis/Interactions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utilis/Interactions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utilis/YourAddress.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utilis/AddresInformation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utilis/YourPersonalInformation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utilis/PersonalInformation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/CreateAccountPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/CreateAccountPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/DressesPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/BuyingDressesPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/HomePageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/HomePageTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" show_ignored="true">
+    <option name="groupingKeys">
+      <option value="module" />
+    </option>
   </component>
   <component name="CodeInsightWorkspaceSettings">
     <option name="optimizeImportsOnTheFly" value="true" />
@@ -132,7 +146,14 @@
       <option name="project" value="LOCAL" />
       <updated>1646914297263</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="New test">
+      <created>1646915209354</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1646915209354</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -149,7 +170,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="JSExecutor and Builder training" />
     <MESSAGE value="JSExecutor and Builder trainings" />
-    <option name="LAST_COMMIT_MESSAGE" value="JSExecutor and Builder trainings" />
+    <MESSAGE value="New Project" />
+    <MESSAGE value="New test" />
+    <option name="LAST_COMMIT_MESSAGE" value="New test" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

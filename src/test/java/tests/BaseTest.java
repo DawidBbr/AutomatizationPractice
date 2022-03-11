@@ -6,13 +6,15 @@ import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import pages.CreateAccountPage;
-import pages.DressesPage;
+import pages.BuyingDressesPage;
+import utilis.Interactions;
 
 public class BaseTest {
     protected static final String BASE_URL = "http://automationpractice.com/index.php";
     protected WebDriver driver;
-    protected DressesPage dressesPage;
+    protected BuyingDressesPage buyingDressesPage;
     protected CreateAccountPage createAccountPage;
+    protected Interactions interactions;
 
     @BeforeEach
     public void setupTest() {
@@ -20,8 +22,10 @@ public class BaseTest {
         driver = new ChromeDriver();
         driver.get(BASE_URL);
         driver.manage().window().maximize();
-        dressesPage = new DressesPage(driver);
-        createAccountPage = new CreateAccountPage(driver);
+        interactions = new Interactions(driver);
+        buyingDressesPage = new BuyingDressesPage(driver);
+        createAccountPage = new CreateAccountPage(interactions);
+
     }
 
     @AfterEach
