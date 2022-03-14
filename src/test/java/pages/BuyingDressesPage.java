@@ -10,10 +10,10 @@ public class BuyingDressesPage extends BasePage implements WebElementSelectors {
         super(interactions);
     }
 
-    public void inputValueOfDressesInSearchBox() {
+    public void fillValueOfDressesInSearchBox() {
         interactions.sendKeys(theMainSearchBoxSelector, "dresses");
     }
-    public void clickInSearchButton() {
+    public void goToDressesResults() {
         interactions.click(buttonSearchSelector);
     }
     public void clickOnButtonSortProductsBy() {
@@ -22,20 +22,20 @@ public class BuyingDressesPage extends BasePage implements WebElementSelectors {
     public void clickOnPriceLowestFirstFromDropDownSortProductsBy() {
         interactions.click(fieldPriceLowestFirstFromDropDownSelectProductSelector);
     }
-    public void hoverOverOnTheDressAndClickOnAddToCartFromDropdown() {
+    public void hoverOverOnTheDressAndAddToCartFromDropdown() {
         interactions.hoverOverAndClickOnDropDownElement(imageOfDressFromListSelector, buttonAddToCartSelectedDressSelector);
     }
     public void clickOnButtonContinueShopping() {
         interactions.click(buttonContinueShoppingSelector);
     }
-    public void hoverOverOnMyShoppingCartAndClickCheckOutFromDropDown() {
+    public void hoverOverOnMyShoppingCartAndCheckOutMyCart() {
         interactions.refreshPage();
         interactions.hoverOverAndClickOnDropDownElement(buttonViewMyShoppingCartSelector, buttonCheckOutFromViewMyShoppingCartDropDownSelector);
     }
     public void clickOnProceedToCheckoutButton() {
         interactions.click(buttonProceedToCheckoutSelector);
     }
-    public void inputEmailAddress() {
+    public void fillEmailAddress() {
         Faker faker = new Faker();
         interactions.sendKeys(fieldEmailAddressSelector, faker.internet().emailAddress());
     }

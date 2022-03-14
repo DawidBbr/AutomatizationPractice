@@ -6,31 +6,35 @@ public class HomePageTest extends BaseTest{
 
     @Test
     public void shouldReturnSuccessOfBuyProduct() {
-        buyingDressesPage.inputValueOfDressesInSearchBox();
-        buyingDressesPage.clickInSearchButton();
+        buyingDressesPage.fillValueOfDressesInSearchBox();
+        buyingDressesPage.goToDressesResults();
         buyingDressesPage.clickOnButtonSortProductsBy();
         buyingDressesPage.clickOnPriceLowestFirstFromDropDownSortProductsBy();
-        buyingDressesPage.hoverOverOnTheDressAndClickOnAddToCartFromDropdown();
+        buyingDressesPage.hoverOverOnTheDressAndAddToCartFromDropdown();
         buyingDressesPage.clickOnButtonContinueShopping();
-        buyingDressesPage.hoverOverOnMyShoppingCartAndClickCheckOutFromDropDown();
+        buyingDressesPage.hoverOverOnMyShoppingCartAndCheckOutMyCart();
         buyingDressesPage.clickOnProceedToCheckoutButton();
-        buyingDressesPage.inputEmailAddress();
+        buyingDressesPage.fillEmailAddress();
         buyingDressesPage.clickOnButtonCreateAnAccount();
-        createAccountPage.inputPersonalInformationToCreateAccount();
-        createAccountPage.inputAddressInformationToCreateAccount();
+        createAccountPage.fillPersonalInformationToCreateAccount();
+        createAccountPage.fillAddressInformationToCreateAccount();
         createAccountPage.clickOnRegisterButton();
+        createAccountPage.clickOnProceedAfterFillPersonalData();
+        createAccountPage.agreeToTermsOfService();
+        createAccountPage.clickOnProceedAfterFillShippingData();
+        createAccountPage.assertIfPaymentPanelIsDisplayed();
     }
     @Test
     public void shouldReturnInvalidPasswordAlertAfterTryingToCreateAccount() {
-        buyingShirtPage.clickOnWomenCategoryButtonInHomepage();
+        buyingShirtPage.goToWomenCategoryPage();
         buyingShirtPage.clickOnTopsCategoryOfProductsButton();
         buyingShirtPage.clickOnMediumSizeOfProductsButton();
         buyingShirtPage.clickOnOrangeColorOfProductsButton();
-        buyingShirtPage.hoverOverOnTheShirtAndClickOnAddToCartFromDropdown();
+        buyingShirtPage.hoverOverOnTheShirtAndAddToCartFromDropdown();
         buyingDressesPage.clickOnButtonContinueShopping();
-        buyingDressesPage.hoverOverOnMyShoppingCartAndClickCheckOutFromDropDown();
+        buyingDressesPage.hoverOverOnMyShoppingCartAndCheckOutMyCart();
         buyingDressesPage.clickOnProceedToCheckoutButton();
-        buyingDressesPage.inputEmailAddress();
+        buyingDressesPage.fillEmailAddress();
         buyingDressesPage.clickOnButtonCreateAnAccount();
         createAccountPage.inputPersonalInformationWithEmptyPassword();
         createAccountPage.inputAddressInformationWithTooLongMobilePhone();

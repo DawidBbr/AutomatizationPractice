@@ -24,6 +24,10 @@ public interface WebElementCreateAccountSelectors {
     By fieldMobilePhoneSelector = By.id("phone_mobile");
     By fieldAddressForFutureReferenceSelector = By.id("alias");
     By buttonRegisterSelector = By.id("submitAccount");
+    By buttonProceedToCheckoutAfterFillPersonalDataSelector = By.xpath("//*[@name='processAddress']");
+    By buttonAgreeToTermsOfServiceSelector = By.xpath("//*[@class='checker']");
+    By buttonProceedToCheckoutAfterFillShippingDataSelector = By.xpath("//*[@name='processCarrier']");
+    By paymentPanelSelector = By.xpath("//*[@class='paiement_block']");
 
 
     default By getSelectDayOfBirthFromDropDownSelectors(DayOfBirth dayOfBirth) {

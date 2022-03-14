@@ -11,7 +11,7 @@ public class BuyingShirtPage  extends BasePage implements WebElementSelectors, W
         super(interactions);
     }
 
-    public void clickOnWomenCategoryButtonInHomepage() {
+    public void goToWomenCategoryPage() {
         interactions.click(buttonTheMainWomenCategorySelector);
     }
     public void clickOnTopsCategoryOfProductsButton() {
@@ -23,10 +23,10 @@ public class BuyingShirtPage  extends BasePage implements WebElementSelectors, W
     public void clickOnOrangeColorOfProductsButton() {
         interactions.click(buttonOrangeColorOfProductsSelector);
     }
-    public void hoverOverOnTheShirtAndClickOnAddToCartFromDropdown() {
+    public void hoverOverOnTheShirtAndAddToCartFromDropdown() {
         interactions.hoverOverAndClickOnDropDownElement(imageOfShirtFromList, buttonAddToCartSelectedShirtSelector);
     }
     public void checkIfRedBoxAlertIsDisplayed() {
-        interactions.isElementDisplayed(redBoxAlertSelector);
+        interactions.awaitUntilElementDisplayed(redBoxAlertSelector);
     }
 }

@@ -1,13 +1,12 @@
 package pages;
 
-import enums.DayOfBirth;
-import enums.MonthOfBirth;
-import enums.State;
-import enums.YearOfBirth;
 import selectors.WebElementCreateAccountSelectors;
-import utilis.Interactions;
 import utilis.AddressInformation;
+import utilis.Interactions;
 import utilis.PersonalInformation;
+
+import static builders.AddressInformationBuilder.getBaseAddressInformationBuilder;
+import static builders.PersonalInformationBuilder.getBasePersonalInformationBuilder;
 
 public class CreateAccountPage extends BasePage implements WebElementCreateAccountSelectors {
 
@@ -15,26 +14,18 @@ public class CreateAccountPage extends BasePage implements WebElementCreateAccou
         super(interactions);
     }
 
-    public PersonalInformation.PersonalInformationBuilder getBasePersonalInformationBuilder() {
-        PersonalInformation.PersonalInformationBuilder personalData = new PersonalInformation.PersonalInformationBuilder()
-                .firstName("Jan")
-                .lastName("Kowalski")
-                .password("Password123");
-        return personalData;
-    }
-
-    public void inputPersonalInformationToCreateAccount() {
+    public void fillPersonalInformationToCreateAccount() {
         PersonalInformation personalInformation = getBasePersonalInformationBuilder().build();
         interactions.click(buttonManGenderSelector);
         interactions.sendKeys(fieldFirstNameSelector, personalInformation.getFirstName());
         interactions.sendKeys(fieldLastNameSelector, personalInformation.getLastName());
         interactions.sendKeys(fieldPasswordSelector, personalInformation.getPassword());
         interactions.click(buttonDayOfBirthSelector);
-        interactions.click(getSelectDayOfBirthFromDropDownSelectors(DayOfBirth.DAY3));
+        interactions.click(getSelectDayOfBirthFromDropDownSelectors(personalInformation.getDayOfBirth()));
         interactions.click(buttonMonthOfBirthSelector);
-        interactions.click(getSelectMonthOfBirthFromDropDownSelectors(MonthOfBirth.AUGUST));
+        interactions.click(getSelectMonthOfBirthFromDropDownSelectors(personalInformation.getMonthOfBirth()));
         interactions.click(buttonYearOfBirthSelector);
-        interactions.click(getSelectYearOfBirthFromDropDownSelectors(YearOfBirth.BORNIN1993));
+        interactions.click(getSelectYearOfBirthFromDropDownSelectors(personalInformation.getYearOfBirth()));
     }
 
     public void inputPersonalInformationWithEmptyPassword() {
@@ -44,34 +35,21 @@ public class CreateAccountPage extends BasePage implements WebElementCreateAccou
         interactions.sendKeys(fieldLastNameSelector, personalInformation.getLastName());
         interactions.sendKeys(fieldPasswordSelector, personalInformation.getPassword());
         interactions.click(buttonDayOfBirthSelector);
-        interactions.click(getSelectDayOfBirthFromDropDownSelectors(DayOfBirth.DAY3));
+        interactions.click(getSelectDayOfBirthFromDropDownSelectors(personalInformation.getDayOfBirth()));
         interactions.click(buttonMonthOfBirthSelector);
-        interactions.click(getSelectMonthOfBirthFromDropDownSelectors(MonthOfBirth.AUGUST));
+        interactions.click(getSelectMonthOfBirthFromDropDownSelectors(personalInformation.getMonthOfBirth()));
         interactions.click(buttonYearOfBirthSelector);
-        interactions.click(getSelectYearOfBirthFromDropDownSelectors(YearOfBirth.BORNIN1993));
+        interactions.click(getSelectYearOfBirthFromDropDownSelectors(personalInformation.getYearOfBirth()));
     }
 
-    public AddressInformation.AddressInformationBuilder getBaseAddressInformationBuilder() {
-        AddressInformation.AddressInformationBuilder addressData = new AddressInformation.AddressInformationBuilder()
-                .company("SWMind")
-                .addressStreet("Polna Street")
-                .addressBuilding("167/6")
-                .city("Michigan")
-                .postalCode("23213")
-                .additionalInformation("Something")
-                .mobilePhone("667884335")
-                .referenceAddress("Wiejska Street");
-                return addressData;
-    }
-
-    public void inputAddressInformationToCreateAccount() {
+    public void fillAddressInformationToCreateAccount() {
         AddressInformation addressInformation = getBaseAddressInformationBuilder().build();
         interactions.sendKeys(fieldAddressCompanySelector, addressInformation.getCompany());
         interactions.sendKeys(fieldAddressStreetSelector, addressInformation.getAddressStreet());
         interactions.sendKeys(fieldAddressBuildingSelector, addressInformation.getAddressBuilding());
         interactions.sendKeys(fieldCitySelector, addressInformation.getCity());
         interactions.click(buttonAddressStateSelector);
-        interactions.click(getSelectStateOfUsaFromDropDownSelectors(State.FLORIDA));
+        interactions.click(getSelectStateOfUsaFromDropDownSelectors(addressInformation.getState()));
         interactions.sendKeys(fieldPostalCodeSelector, addressInformation.getPostalCode());
         interactions.sendKeys(fieldAdditionalInformationSelector, addressInformation.getAdditionalInformation());
         interactions.sendKeys(fieldMobilePhoneSelector, addressInformation.getMobilePhone());
@@ -85,7 +63,7 @@ public class CreateAccountPage extends BasePage implements WebElementCreateAccou
         interactions.sendKeys(fieldAddressBuildingSelector, addressInformation.getAddressBuilding());
         interactions.sendKeys(fieldCitySelector, addressInformation.getCity());
         interactions.click(buttonAddressStateSelector);
-        interactions.click(getSelectStateOfUsaFromDropDownSelectors(State.FLORIDA));
+        interactions.click(getSelectStateOfUsaFromDropDownSelectors(addressInformation.getState()));
         interactions.sendKeys(fieldPostalCodeSelector, addressInformation.getPostalCode());
         interactions.sendKeys(fieldAdditionalInformationSelector, addressInformation.getAdditionalInformation());
         interactions.sendKeys(fieldMobilePhoneSelector, addressInformation.getMobilePhone());
@@ -94,5 +72,17 @@ public class CreateAccountPage extends BasePage implements WebElementCreateAccou
     }
     public void clickOnRegisterButton() {
         interactions.click(buttonRegisterSelector);
+    }
+    public void clickOnProceedAfterFillPersonalData() {
+        interactions.click(buttonProceedToCheckoutAfterFillPersonalDataSelector);
+    }
+    public void agreeToTermsOfService() {
+        interactions.click(buttonAgreeToTermsOfServiceSelector);
+    }
+    public void clickOnProceedAfterFillShippingData() {
+        interactions.click(buttonProceedToCheckoutAfterFillShippingDataSelector);
+    }
+    public void assertIfPaymentPanelIsDisplayed() {
+        interactions.awaitUntilElementDisplayed(paymentPanelSelector);
     }
 }

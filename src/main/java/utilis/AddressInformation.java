@@ -1,15 +1,19 @@
 package utilis;
 
+import enums.State;
+
 public class AddressInformation {
 
-    protected final String company;
-    protected final String addressStreet;
-    protected final String addressBuilding;
-    protected final String city;
-    protected final String postalCode;
-    protected final String additionalInformation;
-    protected final String mobilePhone;
-    protected final String referenceAddress;
+    protected String company;
+    protected String addressStreet;
+    protected String addressBuilding;
+    protected String city;
+    protected String postalCode;
+    protected String additionalInformation;
+    protected String mobilePhone;
+    protected String referenceAddress;
+    protected State state;
+
 
     private AddressInformation(AddressInformationBuilder builder) {
         this.company = builder.company;
@@ -20,6 +24,7 @@ public class AddressInformation {
         this.additionalInformation = builder.additionalInformation;
         this.mobilePhone = builder.mobilePhone;
         this.referenceAddress = builder.referenceAddress;
+        this.state = builder.state;
     }
 
     public String getCompany() {
@@ -54,9 +59,13 @@ public class AddressInformation {
         return referenceAddress;
     }
 
+    public State getState() {
+        return state;
+    }
+
     @Override
     public String toString() {
-        return "AddresInformation{" +
+        return "AddressInformation{" +
                 "company='" + company + '\'' +
                 ", addressStreet='" + addressStreet + '\'' +
                 ", addressBuilding='" + addressBuilding + '\'' +
@@ -65,6 +74,7 @@ public class AddressInformation {
                 ", additionalInformation='" + additionalInformation + '\'' +
                 ", mobilePhone='" + mobilePhone + '\'' +
                 ", referenceAddress='" + referenceAddress + '\'' +
+                ", state=" + state +
                 '}';
     }
 
@@ -77,37 +87,42 @@ public class AddressInformation {
         protected String additionalInformation;
         protected String mobilePhone;
         protected String referenceAddress;
+        protected State state;
 
-        public AddressInformationBuilder company(final String company) {
+        public AddressInformationBuilder company(String company) {
             this.company = company;
             return this;
         }
-        public AddressInformationBuilder addressStreet(final String addressStreet) {
+        public AddressInformationBuilder addressStreet(String addressStreet) {
             this.addressStreet = addressStreet;
             return this;
         }
-        public AddressInformationBuilder addressBuilding(final String addressBuilding) {
+        public AddressInformationBuilder addressBuilding(String addressBuilding) {
             this.addressBuilding = addressBuilding;
             return this;
         }
-        public AddressInformationBuilder city(final String city) {
+        public AddressInformationBuilder city(String city) {
             this.city = city;
             return this;
         }
-        public AddressInformationBuilder postalCode(final String postalCode) {
+        public AddressInformationBuilder postalCode(String postalCode) {
             this.postalCode = postalCode;
             return this;
         }
-        public AddressInformationBuilder additionalInformation(final String additionalInformation) {
+        public AddressInformationBuilder additionalInformation(String additionalInformation) {
             this.additionalInformation = additionalInformation;
             return this;
         }
-        public AddressInformationBuilder mobilePhone(final String mobilePhone) {
+        public AddressInformationBuilder mobilePhone(String mobilePhone) {
             this.mobilePhone = mobilePhone;
             return this;
         }
-        public AddressInformationBuilder referenceAddress(final String referenceAddress) {
+        public AddressInformationBuilder referenceAddress(String referenceAddress) {
             this.referenceAddress = referenceAddress;
+            return this;
+        }
+        public AddressInformationBuilder state(State state) {
+            this.state = state;
             return this;
         }
         public AddressInformation build() {
