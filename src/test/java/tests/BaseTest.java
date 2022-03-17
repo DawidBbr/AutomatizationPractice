@@ -5,9 +5,10 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import pages.BuyingDressesPage;
 import pages.BuyingShirtPage;
 import pages.CreateAccountPage;
-import pages.BuyingDressesPage;
+import pages.SummerSkirtPage;
 import utilis.Interactions;
 
 public class BaseTest {
@@ -17,6 +18,7 @@ public class BaseTest {
     protected BuyingDressesPage buyingDressesPage;
     protected CreateAccountPage createAccountPage;
     protected BuyingShirtPage buyingShirtPage;
+    protected SummerSkirtPage summerSkirtPage;
     @BeforeEach
     public void setupTest() {
         WebDriverManager.chromedriver().setup();
@@ -27,7 +29,7 @@ public class BaseTest {
         buyingDressesPage = new BuyingDressesPage(interactions);
         createAccountPage = new CreateAccountPage(interactions);
         buyingShirtPage = new BuyingShirtPage(interactions);
-
+        summerSkirtPage = new SummerSkirtPage(interactions);
     }
 
     @AfterEach

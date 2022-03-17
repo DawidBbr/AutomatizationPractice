@@ -29,4 +29,5 @@ public class BuyingShirtPage  extends BasePage implements WebElementSelectors, W
     public void checkIfRedBoxAlertIsDisplayed() {
         interactions.awaitUntilElementDisplayed(redBoxAlertSelector);
     }
+
 }

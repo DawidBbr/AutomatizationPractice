@@ -2,7 +2,8 @@ package tests;
 
 import org.junit.jupiter.api.Test;
 
-public class HomePageTest extends BaseTest{
+public class HomePageTest extends BaseTest {
+
 
     @Test
     public void shouldReturnSuccessOfBuyProduct() {
@@ -24,6 +25,7 @@ public class HomePageTest extends BaseTest{
         createAccountPage.clickOnProceedAfterFillShippingData();
         createAccountPage.assertIfPaymentPanelIsDisplayed();
     }
+
     @Test
     public void shouldReturnInvalidPasswordAlertAfterTryingToCreateAccount() {
         buyingShirtPage.goToWomenCategoryPage();
@@ -40,6 +42,13 @@ public class HomePageTest extends BaseTest{
         createAccountPage.inputAddressInformationWithTooLongMobilePhone();
         createAccountPage.clickOnRegisterButton();
         buyingShirtPage.checkIfRedBoxAlertIsDisplayed();
+    }
+    @Test
+    public void shouldReturnSuccessOf() {
+        summerSkirtPage.hoverOverOnWomenCategoryAndClickOnSubcategorySummerDresses();
+        summerSkirtPage.setPriceRange();
+
+
     }
 
 }
