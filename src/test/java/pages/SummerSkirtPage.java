@@ -9,12 +9,11 @@ public class SummerSkirtPage extends BasePage implements WebElementSummerSkirtSe
         super(interactions);
     }
     public void hoverOverOnWomenCategoryAndClickOnSubcategorySummerDresses() {
-        interactions.hoverOverAndClickOnDropDownElement(womenCategoryPageSelector, summerDressesSubcategoryOfWomenSelector);
+        interactions.mouseOverElementAndClickOnSubElement(womenCategoryPageSelector, summerDressesSubcategoryOfWomenSelector);
     }
     public void setPriceRange() {
-        interactions.scrollPage(1000);
-        interactions.moveSlider(getSliderOfPriceRangeSelector(1), 30);
-        interactions.moveSlider(getSliderOfPriceRangeSelector(2), -30);
+        interactions.scrollToVisibleOfElement(getSliderOfPriceRangeSelector(1));
+        interactions.moveSlider(getSliderOfPriceRangeSelector(1),30,0);
     }
 
 }

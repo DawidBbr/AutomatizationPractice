@@ -24,7 +24,7 @@ public class BuyingShirtPage  extends BasePage implements WebElementSelectors, W
         interactions.click(buttonOrangeColorOfProductsSelector);
     }
     public void hoverOverOnTheShirtAndAddToCartFromDropdown() {
-        interactions.hoverOverAndClickOnDropDownElement(imageOfShirtFromList, buttonAddToCartSelectedShirtSelector);
+        interactions.mouseOverElementAndClickOnSubElement(imageOfShirtFromList, buttonAddToCartSelectedShirtSelector);
     }
     public void checkIfRedBoxAlertIsDisplayed() {
         interactions.awaitUntilElementDisplayed(redBoxAlertSelector);

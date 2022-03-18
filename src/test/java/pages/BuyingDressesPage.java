@@ -23,14 +23,14 @@ public class BuyingDressesPage extends BasePage implements WebElementSelectors {
         interactions.click(fieldPriceLowestFirstFromDropDownSelectProductSelector);
     }
     public void hoverOverOnTheDressAndAddToCartFromDropdown() {
-        interactions.hoverOverAndClickOnDropDownElement(imageOfDressFromListSelector, buttonAddToCartSelectedDressSelector);
+        interactions.mouseOverElementAndClickOnSubElement(imageOfDressFromListSelector, buttonAddToCartSelectedDressSelector);
     }
     public void clickOnButtonContinueShopping() {
         interactions.click(buttonContinueShoppingSelector);
     }
     public void hoverOverOnMyShoppingCartAndCheckOutMyCart() {
         interactions.refreshPage();
-        interactions.hoverOverAndClickOnDropDownElement(buttonViewMyShoppingCartSelector, buttonCheckOutFromViewMyShoppingCartDropDownSelector);
+        interactions.mouseOverElementAndClickOnSubElement(buttonViewMyShoppingCartSelector, buttonCheckOutFromViewMyShoppingCartDropDownSelector);
     }
     public void clickOnProceedToCheckoutButton() {
         interactions.click(buttonProceedToCheckoutSelector);

@@ -1,7 +1,10 @@
 package utilis;
 
 import org.awaitility.Awaitility;
-import org.openqa.selenium.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 
 import java.util.NoSuchElementException;
@@ -53,12 +56,12 @@ public class Interactions {
         return elementPresent;
     }
 
-    public void hoverOverAndClickOnDropDownElement(By fieldToExpandSelector, By elementFromDropDownSelector) {
-        awaitUntilElementDisplayed(fieldToExpandSelector);
+    public void mouseOverElementAndClickOnSubElement(By elementToExpand, By subElement) {
+        awaitUntilElementDisplayed(elementToExpand);
         Actions actions = new Actions(driver);
-        actions.moveToElement(driver.findElement(fieldToExpandSelector)).perform();
-        awaitUntilElementDisplayed(elementFromDropDownSelector);
-        driver.findElement(elementFromDropDownSelector).click();
+        actions.moveToElement(driver.findElement(elementToExpand)).perform();
+        awaitUntilElementDisplayed(subElement);
+        driver.findElement(subElement).click();
     }
 
     public void refreshPage() {
@@ -70,17 +73,27 @@ public class Interactions {
         JavascriptExecutor scroll = ((JavascriptExecutor) driver);
         scroll.executeScript("window.scrollBy(0, " + scrollFactor + ")");
     }
+    public void scrollToVisibleOfElement(By selector) {
+        awaitUntilElementDisplayed(selector);
+        JavascriptExecutor scroll = ((JavascriptExecutor) driver);
+        scroll.executeScript("arguments[0].scrollIntoView(true);", driver.findElement(selector));
+    }
 
     public void scrollToBottomOfPage() {
         JavascriptExecutor scroll = ((JavascriptExecutor) driver);
         scroll.executeScript("window.scrollTo(0, document.body.scrollHeight)");
     }
 
-    public void moveSlider(By slider, int shift) {
+    public void moveSlider(By slider, int shiftX, int shiftY) {
         awaitUntilElementDisplayed(slider);
         Actions move = new Actions(driver);
-        move.dragAndDropBy(driver.findElement(slider), shift, 0).click();
+        move.dragAndDropBy(driver.findElement(slider), shiftX, shiftY).click();
         move.build().perform();
+    }
+    public void rightClick(By selector) {
+        awaitUntilElementDisplayed(selector);
+        Actions clicker = new Actions(driver);
+        clicker.contextClick(driver.findElement(selector)).perform();
     }
 }
 

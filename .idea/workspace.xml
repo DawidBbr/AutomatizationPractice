@@ -5,14 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b9160ca4-1f33-4bb8-9c3a-10a8009ed0ee" name="Changes" comment="New test">
-      <change afterPath="$PROJECT_DIR$/src/test/java/pages/SummerSkirtPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/selectors/WebElementSummerSkirtSelectors.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/utilis/Interactions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utilis/Interactions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/BuyingDressesPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/BuyingDressesPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/pages/BuyingShirtPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/BuyingShirtPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/selectors/WebElementShirtSelectors.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/selectors/WebElementShirtSelectors.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/HomePageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/HomePageTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/SummerSkirtPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/SummerSkirtPage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -237,7 +234,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647252699103</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="New test">
+      <created>1647510240795</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1647510240795</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -257,17 +261,6 @@
     <MESSAGE value="New Project" />
     <MESSAGE value="New test" />
     <option name="LAST_COMMIT_MESSAGE" value="New test" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/pages/SummerSkirtPage.java</url>
-          <line>16</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
