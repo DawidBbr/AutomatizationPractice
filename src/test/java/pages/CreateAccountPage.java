@@ -10,8 +10,8 @@ import static builders.PersonalInformationBuilder.getBasePersonalInformationBuil
 
 public class CreateAccountPage extends BasePage implements WebElementCreateAccountSelectors {
 
-    public CreateAccountPage(Interactions interactions) {
-        super(interactions);
+    public CreateAccountPage(Interactions driver) {
+        super(driver);
     }
 
     public void fillPersonalInformationToCreateAccount() {

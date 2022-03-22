@@ -5,8 +5,8 @@ import utilis.Interactions;
 
 public class SummerSkirtPage extends BasePage implements WebElementSummerSkirtSelectors {
 
-    public SummerSkirtPage(Interactions interactions) {
-        super(interactions);
+    public SummerSkirtPage(Interactions driver) {
+        super(driver);
     }
     public void hoverOverOnWomenCategoryAndClickOnSubcategorySummerDresses() {
         driver.mouseOverElementAndClickOnSubElement(womenCategoryPageSelector, summerDressesSubcategoryOfWomenSelector);

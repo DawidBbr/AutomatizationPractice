@@ -6,8 +6,8 @@ import utilis.Interactions;
 
 public class BuyingShirtPage  extends BasePage implements WebElementSelectors, WebElementShirtSelectors {
 
-    public BuyingShirtPage(Interactions interactions) {
-        super(interactions);
+    public BuyingShirtPage(Interactions driver) {
+        super(driver);
     }
 
     public void clickOnTopsCategoryOfProductsButton() {

@@ -6,8 +6,8 @@ import utilis.Interactions;
 
 public class HomePage extends BasePage implements WebElementSelectors, WebElementSummerSkirtSelectors {
 
-    public HomePage(Interactions interactions) {
-        super(interactions);
+    public HomePage(Interactions driver) {
+        super(driver);
     }
 
     public void fillValueOfDressesInSearchBox() {

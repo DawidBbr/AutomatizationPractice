@@ -7,8 +7,8 @@ import utilis.Interactions;
 
 public class OrderProductPage extends BasePage implements WebElementSelectors, WebElementCreateAccountSelectors {
 
-    public OrderProductPage(Interactions interactions) {
-        super(interactions);
+    public OrderProductPage(Interactions driver) {
+        super(driver);
     }
     public void fillEmailAddress() {
         Faker faker = new Faker();

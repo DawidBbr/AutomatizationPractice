@@ -5,8 +5,8 @@ import utilis.Interactions;
 
 public class BuyingDressesPage extends BasePage implements WebElementSelectors {
 
-    public BuyingDressesPage(Interactions interactions) {
-        super(interactions);
+    public BuyingDressesPage(Interactions driver) {
+        super(driver);
     }
 
     public void clickOnButtonSortProductsBy() {
