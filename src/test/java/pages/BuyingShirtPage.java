@@ -6,28 +6,33 @@ import utilis.Interactions;
 
 public class BuyingShirtPage  extends BasePage implements WebElementSelectors, WebElementShirtSelectors {
 
-
     public BuyingShirtPage(Interactions interactions) {
         super(interactions);
     }
 
-    public void goToWomenCategoryPage() {
-        interactions.click(buttonTheMainWomenCategorySelector);
-    }
     public void clickOnTopsCategoryOfProductsButton() {
-        interactions.click(buttonTopsCategoryOfProductsSelector);
+        driver.click(buttonTopsCategoryOfProductsSelector);
     }
     public void clickOnMediumSizeOfProductsButton() {
-        interactions.click(buttonMediumSizeOfProductsSelector);
+        driver.click(buttonMediumSizeOfProductsSelector);
     }
     public void clickOnOrangeColorOfProductsButton() {
-        interactions.click(buttonOrangeColorOfProductsSelector);
+        driver.click(buttonOrangeColorOfProductsSelector);
     }
     public void hoverOverOnTheShirtAndAddToCartFromDropdown() {
-        interactions.mouseOverElementAndClickOnSubElement(imageOfShirtFromList, buttonAddToCartSelectedShirtSelector);
-    }
-    public void checkIfRedBoxAlertIsDisplayed() {
-        interactions.awaitUntilElementDisplayed(redBoxAlertSelector);
+        driver.mouseOverElementAndClickOnSubElement(imageOfShirtFromList, buttonAddToCartSelectedShirtSelector);
     }
 
+    public void clickOnButtonContinueShopping() {
+        driver.click(buttonContinueShoppingSelector);
+    }
+
+    public void hoverOverOnMyShoppingCartAndCheckOutMyCart() {
+        driver.refreshPage();
+        driver.mouseOverElementAndClickOnSubElement(buttonViewMyShoppingCartSelector, buttonCheckOutFromViewMyShoppingCartDropDownSelector);
+    }
+    public OrderProductPage clickOnProceedToCheckoutButton() {
+        driver.click(buttonProceedToCheckoutSelector);
+        return new OrderProductPage(driver);
+    }
 }

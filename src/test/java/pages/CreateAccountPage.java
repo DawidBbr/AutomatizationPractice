@@ -16,73 +16,63 @@ public class CreateAccountPage extends BasePage implements WebElementCreateAccou
 
     public void fillPersonalInformationToCreateAccount() {
         PersonalInformation personalInformation = getBasePersonalInformationBuilder().build();
-        interactions.click(buttonManGenderSelector);
-        interactions.sendKeys(fieldFirstNameSelector, personalInformation.getFirstName());
-        interactions.sendKeys(fieldLastNameSelector, personalInformation.getLastName());
-        interactions.sendKeys(fieldPasswordSelector, personalInformation.getPassword());
-        interactions.click(buttonDayOfBirthSelector);
-        interactions.click(getSelectDayOfBirthFromDropDownSelectors(personalInformation.getDayOfBirth()));
-        interactions.click(buttonMonthOfBirthSelector);
-        interactions.click(getSelectMonthOfBirthFromDropDownSelectors(personalInformation.getMonthOfBirth()));
-        interactions.click(buttonYearOfBirthSelector);
-        interactions.click(getSelectYearOfBirthFromDropDownSelectors(personalInformation.getYearOfBirth()));
+        driver.click(buttonManGenderSelector);
+        driver.sendKeys(fieldFirstNameSelector, personalInformation.getFirstName());
+        driver.sendKeys(fieldLastNameSelector, personalInformation.getLastName());
+        driver.sendKeys(fieldPasswordSelector, personalInformation.getPassword());
+        driver.click(buttonDayOfBirthSelector);
+        driver.click(getSelectDayOfBirthFromDropDownSelectors(personalInformation.getDayOfBirth()));
+        driver.click(buttonMonthOfBirthSelector);
+        driver.click(getSelectMonthOfBirthFromDropDownSelectors(personalInformation.getMonthOfBirth()));
+        driver.click(buttonYearOfBirthSelector);
+        driver.click(getSelectYearOfBirthFromDropDownSelectors(personalInformation.getYearOfBirth()));
     }
 
     public void inputPersonalInformationWithEmptyPassword() {
         PersonalInformation personalInformation = getBasePersonalInformationBuilder().password("").build();
-        interactions.click(buttonManGenderSelector);
-        interactions.sendKeys(fieldFirstNameSelector, personalInformation.getFirstName());
-        interactions.sendKeys(fieldLastNameSelector, personalInformation.getLastName());
-        interactions.sendKeys(fieldPasswordSelector, personalInformation.getPassword());
-        interactions.click(buttonDayOfBirthSelector);
-        interactions.click(getSelectDayOfBirthFromDropDownSelectors(personalInformation.getDayOfBirth()));
-        interactions.click(buttonMonthOfBirthSelector);
-        interactions.click(getSelectMonthOfBirthFromDropDownSelectors(personalInformation.getMonthOfBirth()));
-        interactions.click(buttonYearOfBirthSelector);
-        interactions.click(getSelectYearOfBirthFromDropDownSelectors(personalInformation.getYearOfBirth()));
+        driver.click(buttonManGenderSelector);
+        driver.sendKeys(fieldFirstNameSelector, personalInformation.getFirstName());
+        driver.sendKeys(fieldLastNameSelector, personalInformation.getLastName());
+        driver.sendKeys(fieldPasswordSelector, personalInformation.getPassword());
+        driver.click(buttonDayOfBirthSelector);
+        driver.click(getSelectDayOfBirthFromDropDownSelectors(personalInformation.getDayOfBirth()));
+        driver.click(buttonMonthOfBirthSelector);
+        driver.click(getSelectMonthOfBirthFromDropDownSelectors(personalInformation.getMonthOfBirth()));
+        driver.click(buttonYearOfBirthSelector);
+        driver.click(getSelectYearOfBirthFromDropDownSelectors(personalInformation.getYearOfBirth()));
     }
 
     public void fillAddressInformationToCreateAccount() {
         AddressInformation addressInformation = getBaseAddressInformationBuilder().build();
-        interactions.sendKeys(fieldAddressCompanySelector, addressInformation.getCompany());
-        interactions.sendKeys(fieldAddressStreetSelector, addressInformation.getAddressStreet());
-        interactions.sendKeys(fieldAddressBuildingSelector, addressInformation.getAddressBuilding());
-        interactions.sendKeys(fieldCitySelector, addressInformation.getCity());
-        interactions.click(buttonAddressStateSelector);
-        interactions.click(getSelectStateOfUsaFromDropDownSelectors(addressInformation.getState()));
-        interactions.sendKeys(fieldPostalCodeSelector, addressInformation.getPostalCode());
-        interactions.sendKeys(fieldAdditionalInformationSelector, addressInformation.getAdditionalInformation());
-        interactions.sendKeys(fieldMobilePhoneSelector, addressInformation.getMobilePhone());
-        interactions.clear(fieldAddressForFutureReferenceSelector);
-        interactions.sendKeys(fieldAddressForFutureReferenceSelector, addressInformation.getReferenceAddress());
+        driver.sendKeys(fieldAddressCompanySelector, addressInformation.getCompany());
+        driver.sendKeys(fieldAddressStreetSelector, addressInformation.getAddressStreet());
+        driver.sendKeys(fieldAddressBuildingSelector, addressInformation.getAddressBuilding());
+        driver.sendKeys(fieldCitySelector, addressInformation.getCity());
+        driver.click(buttonAddressStateSelector);
+        driver.click(getSelectStateOfUsaFromDropDownSelectors(addressInformation.getState()));
+        driver.sendKeys(fieldPostalCodeSelector, addressInformation.getPostalCode());
+        driver.sendKeys(fieldAdditionalInformationSelector, addressInformation.getAdditionalInformation());
+        driver.sendKeys(fieldMobilePhoneSelector, addressInformation.getMobilePhone());
+        driver.clear(fieldAddressForFutureReferenceSelector);
+        driver.sendKeys(fieldAddressForFutureReferenceSelector, addressInformation.getReferenceAddress());
     }
     public void inputAddressInformationWithTooLongMobilePhone() {
         AddressInformation addressInformation = getBaseAddressInformationBuilder().mobilePhone("4553315563").build();
-        interactions.sendKeys(fieldAddressCompanySelector, addressInformation.getCompany());
-        interactions.sendKeys(fieldAddressStreetSelector, addressInformation.getAddressStreet());
-        interactions.sendKeys(fieldAddressBuildingSelector, addressInformation.getAddressBuilding());
-        interactions.sendKeys(fieldCitySelector, addressInformation.getCity());
-        interactions.click(buttonAddressStateSelector);
-        interactions.click(getSelectStateOfUsaFromDropDownSelectors(addressInformation.getState()));
-        interactions.sendKeys(fieldPostalCodeSelector, addressInformation.getPostalCode());
-        interactions.sendKeys(fieldAdditionalInformationSelector, addressInformation.getAdditionalInformation());
-        interactions.sendKeys(fieldMobilePhoneSelector, addressInformation.getMobilePhone());
-        interactions.clear(fieldAddressForFutureReferenceSelector);
-        interactions.sendKeys(fieldAddressForFutureReferenceSelector, addressInformation.getReferenceAddress());
+        driver.sendKeys(fieldAddressCompanySelector, addressInformation.getCompany());
+        driver.sendKeys(fieldAddressStreetSelector, addressInformation.getAddressStreet());
+        driver.sendKeys(fieldAddressBuildingSelector, addressInformation.getAddressBuilding());
+        driver.sendKeys(fieldCitySelector, addressInformation.getCity());
+        driver.click(buttonAddressStateSelector);
+        driver.click(getSelectStateOfUsaFromDropDownSelectors(addressInformation.getState()));
+        driver.sendKeys(fieldPostalCodeSelector, addressInformation.getPostalCode());
+        driver.sendKeys(fieldAdditionalInformationSelector, addressInformation.getAdditionalInformation());
+        driver.sendKeys(fieldMobilePhoneSelector, addressInformation.getMobilePhone());
+        driver.clear(fieldAddressForFutureReferenceSelector);
+        driver.sendKeys(fieldAddressForFutureReferenceSelector, addressInformation.getReferenceAddress());
     }
-    public void clickOnRegisterButton() {
-        interactions.click(buttonRegisterSelector);
+    public OrderProductPage clickOnRegisterButton() {
+        driver.click(buttonRegisterSelector);
+        return new OrderProductPage(driver);
     }
-    public void clickOnProceedAfterFillPersonalData() {
-        interactions.click(buttonProceedToCheckoutAfterFillPersonalDataSelector);
-    }
-    public void agreeToTermsOfService() {
-        interactions.click(buttonAgreeToTermsOfServiceSelector);
-    }
-    public void clickOnProceedAfterFillShippingData() {
-        interactions.click(buttonProceedToCheckoutAfterFillShippingDataSelector);
-    }
-    public void assertIfPaymentPanelIsDisplayed() {
-        interactions.awaitUntilElementDisplayed(paymentPanelSelector);
-    }
+
 }

@@ -3,9 +3,9 @@ package pages;
 import utilis.Interactions;
 
 public abstract class BasePage {
-    protected Interactions interactions;
+    protected Interactions driver;
 
-    public BasePage(Interactions interactions) {
-        this.interactions = interactions;
+    public BasePage(Interactions driver) {
+        this.driver = driver;
     }
 }
