@@ -21,7 +21,7 @@ public class HomePage extends BasePage implements WebElementSelectors, WebElemen
         driver.click(buttonTheMainWomenCategorySelector);
         return new BuyingShirtPage(driver);
     }
-    public SummerSkirtPage hoverOverOnWomenCategoryAndClickOnSubcategorySummerDresses() {
+    public SummerSkirtPage mouseOverOnWomenCategoryAndClickOnSubcategorySummerDresses() {
         driver.mouseOverElementAndClickOnSubElement(womenCategoryPageSelector, summerDressesSubcategoryOfWomenSelector);
         return new SummerSkirtPage(driver);
     }

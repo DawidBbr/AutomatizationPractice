@@ -19,18 +19,11 @@ public class BuyingShirtPage  extends BasePage implements WebElementSelectors, W
     public void clickOnOrangeColorOfProductsButton() {
         driver.click(buttonOrangeColorOfProductsSelector);
     }
-    public void hoverOverOnTheShirtAndAddToCartFromDropdown() {
+    public BuyingDressesPage hoverOverOnTheShirtAndAddToCartFromDropdown() {
         driver.mouseOverElementAndClickOnSubElement(imageOfShirtFromList, buttonAddToCartSelectedShirtSelector);
+        return new BuyingDressesPage(driver);
     }
 
-    public void clickOnButtonContinueShopping() {
-        driver.click(buttonContinueShoppingSelector);
-    }
-
-    public void hoverOverOnMyShoppingCartAndCheckOutMyCart() {
-        driver.refreshPage();
-        driver.mouseOverElementAndClickOnSubElement(buttonViewMyShoppingCartSelector, buttonCheckOutFromViewMyShoppingCartDropDownSelector);
-    }
     public OrderProductPage clickOnProceedToCheckoutButton() {
         driver.click(buttonProceedToCheckoutSelector);
         return new OrderProductPage(driver);

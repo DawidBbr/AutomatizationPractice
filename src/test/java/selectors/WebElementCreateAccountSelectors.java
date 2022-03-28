@@ -28,6 +28,7 @@ public interface WebElementCreateAccountSelectors {
     By buttonAgreeToTermsOfServiceSelector = By.xpath("//*[@class='checker']");
     By buttonProceedToCheckoutAfterFillShippingDataSelector = By.xpath("//*[@name='processCarrier']");
     By paymentPanelSelector = By.xpath("//*[@class='paiement_block']");
+    By buttonSaveAddressInformation = By.id("submitAddress");
 
 
     default By getSelectDayOfBirthFromDropDownSelectors(DayOfBirth dayOfBirth) {

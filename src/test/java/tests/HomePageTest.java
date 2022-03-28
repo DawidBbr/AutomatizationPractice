@@ -17,8 +17,9 @@ public class HomePageTest extends BaseTest {
         orderProductPage.fillEmailAddress();
         createAccountPage = orderProductPage.clickOnButtonCreateAnAccount();
         createAccountPage.fillPersonalInformationToCreateAccount();
-        createAccountPage.fillAddressInformationToCreateAccount();
         orderProductPage = createAccountPage.clickOnRegisterButton();
+        createAccountPage.fillAddressInformationToCreateAccount();
+        orderProductPage = createAccountPage.saveAddressInformation();
         orderProductPage.clickOnProceedAfterFillPersonalData();
         orderProductPage.agreeToTermsOfService();
         orderProductPage.clickOnProceedAfterFillShippingData();
@@ -31,21 +32,25 @@ public class HomePageTest extends BaseTest {
         buyingShirtPage.clickOnTopsCategoryOfProductsButton();
         buyingShirtPage.clickOnMediumSizeOfProductsButton();
         buyingShirtPage.clickOnOrangeColorOfProductsButton();
-        buyingShirtPage.hoverOverOnTheShirtAndAddToCartFromDropdown();
-        buyingShirtPage.clickOnButtonContinueShopping();
-        buyingShirtPage.hoverOverOnMyShoppingCartAndCheckOutMyCart();
+        buyingDressesPage = buyingShirtPage.hoverOverOnTheShirtAndAddToCartFromDropdown();
+        buyingDressesPage.clickOnButtonContinueShopping();
+        buyingDressesPage.hoverOverOnMyShoppingCartAndCheckOutMyCart();
         orderProductPage = buyingDressesPage.clickOnProceedToCheckoutButton();
         orderProductPage.fillEmailAddress();
         createAccountPage = orderProductPage.clickOnButtonCreateAnAccount();
-        createAccountPage.fillPersonalInformationToCreateAccount();
-        createAccountPage.fillAddressInformationToCreateAccount();
+        createAccountPage.inputPersonalInformationWithEmptyPassword();
         orderProductPage = createAccountPage.clickOnRegisterButton();
         orderProductPage.checkIfRedBoxAlertIsDisplayed();
     }
+
     @Test
-    public void shouldReturnSuccessOfChangePrice() {
-        summerSkirtPage = homePage.hoverOverOnWomenCategoryAndClickOnSubcategorySummerDresses();
+    public void shouldReturnSuccessOfBuyDressAfterCompareWithAnother() {
+        summerSkirtPage = homePage.mouseOverOnWomenCategoryAndClickOnSubcategorySummerDresses();
         summerSkirtPage.setPriceRange();
+        summerSkirtPage.switchViewToList();
+        summerSkirtPage.addToCompareLongSummerDress();
+        summerSkirtPage.addToCompareKneeLengthSummerDress();
+        summerSkirtPage.compareSelectedProducts();
 
     }
 

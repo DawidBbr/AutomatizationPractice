@@ -9,7 +9,7 @@ import pages.*;
 import utilis.Interactions;
 
 public class BaseTest {
-    protected final String BASE_URL = "http://automationpractice.com/index.php";
+    protected final String BASE_URL = "http://automationpractice.pl/index.php";
     protected WebDriver driver;
     protected HomePage homePage;
     protected Interactions interactions;

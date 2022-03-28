@@ -74,5 +74,9 @@ public class CreateAccountPage extends BasePage implements WebElementCreateAccou
         driver.click(buttonRegisterSelector);
         return new OrderProductPage(driver);
     }
+    public OrderProductPage saveAddressInformation() {
+        driver.click(buttonSaveAddressInformation);
+        return new OrderProductPage(driver);
+    }
 
 }
