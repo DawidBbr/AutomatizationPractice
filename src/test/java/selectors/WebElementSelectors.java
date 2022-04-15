@@ -3,19 +3,19 @@ package selectors;
 import org.openqa.selenium.By;
 
 public interface WebElementSelectors {
-    By theMainSearchBoxSelector = By.id("search_query_top");
-    By buttonSearchSelector = By.xpath("//*[@name='submit_search']");
-    By buttonSelectProductBySelector = By.id("uniform-selectProductSort");
-    By fieldPriceLowestFirstFromDropDownSelectProductSelector = By.xpath("//*[@value='price:asc' and contains(text(),'Lowest first')]");
-    By imageOfDressFromListSelector = By.xpath("//*[@title='Printed Chiffon Dress']//*[@width='250']");
-    By buttonAddToCartSelectedDressSelector = By.xpath("//*[@data-id-product='7']//*[text()='Add to cart']");
-    By buttonContinueShoppingSelector = By.xpath("//*[@title='Continue shopping']");
-    By buttonViewMyShoppingCartSelector = By.xpath("//*[@title='View my shopping cart']");
-    By buttonCheckOutFromViewMyShoppingCartDropDownSelector = By.id("button_order_cart");
-    By buttonProceedToCheckoutSelector = By.xpath("//*[@class='button btn btn-default standard-checkout button-medium']");
-    By fieldEmailAddressSelector = By.id("email_create");
-    By buttonCreateAnAccountSelector = By.id("SubmitCreate");
-    By buttonTheMainWomenCategorySelector = By.xpath("//a[@title='Women']");
-    By redBoxAlertSelector = By.xpath("//*[@class='alert alert-danger']");
-
+    By fieldUserNameSelector = By.id("LocalizableTextField_CH_LOGINNAME");
+    By fieldPasswordSelector = By.id("LocalizableUIPasswordField_CH_PASSWORD");
+    By buttonLoginSelector = By.id("LoginPageButton_BUTTON_NEXT");
+    By buttonOkInProcountorDemonstrationBoxSelector = By.id("GuiButton_OK");
+    By searchEngineInputSelector = By.id("SearchParameterTextField");
+    By importDataButtonFromDropDownSelector = By.id("UIButton_Management----em-class--match--Import-data--em-");
+    By buttonImportTypeSelector = By.id("GuiChoice_CH_IMPORTTYPE");
+    By buttonImportInvoicesFromDropDownImportTypeSelector = By.xpath("//*[contains(text(),'Import invoices')]");
+    By selectFileButtonSelector = By.id("AButton_SELECT_FILE_");
+    By chooseFileButtonSelector = By.xpath("//*[@class='gwt-FileUpload']");
+    By buttonContinueInImportFileBoxSelector = By.id("GuiButton_CONTINUE");
+    By buttonContinueAfterImportFileSelector = By.id("AButton_CONTINUE");
+    By buttonSaveFileCSVSelector = By.id("AButton_SAVE_");
+    By buttonConfirmingReadinessToImportSelector = By.id("GuiButton_YES");
+    By resultRowOfImportedInvoicesSelector = By.xpath("//*[@class='v-grid-row v-grid-row-focused v-grid-row-has-data v-grid-row-selected']");
 }

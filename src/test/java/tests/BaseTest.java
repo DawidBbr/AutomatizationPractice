@@ -5,28 +5,23 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import pages.*;
+import pages.LoginPage;
 import utilis.Interactions;
 
 public class BaseTest {
-    protected final String BASE_URL = "http://automationpractice.pl/index.php";
     protected WebDriver driver;
-    protected HomePage homePage;
     protected Interactions interactions;
-    protected OrderProductPage orderProductPage;
-    protected BuyingDressesPage buyingDressesPage;
-    protected CreateAccountPage createAccountPage;
-    protected BuyingShirtPage buyingShirtPage;
-    protected SummerSkirtPage summerSkirtPage;
+    protected LoginPage loginPage;
 
     @BeforeEach
     public void setupTest() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
+        final String BASE_URL = "https://secure.procountor.com/";
         driver.get(BASE_URL);
         driver.manage().window().maximize();
         interactions = new Interactions(driver);
-        homePage = new HomePage(interactions);
+        loginPage = new LoginPage(interactions);
     }
 
     @AfterEach
